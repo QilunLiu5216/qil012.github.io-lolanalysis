@@ -3,6 +3,8 @@ This is a repository about League of Legends 2018 data analysis
 
 <h1>Strategic Early Decisions and Their Impact on Victory in League of Legends</h1>
 
+## Introduction
+
 <p>In the competitive realm of professional League of Legends, the actions taken in the early stages of a game can often determine the outcome of the entire match. This analysis probes into the 2018 season's professional matches to extract valuable insights into how early-game performances correlate with the chances of winning.</p>
 
 <p>Our analysis, fueled by data sourced from Oracle's Elixir, scrutinizes the importance of achieving 'First Blood,' capturing dragons, and destroying the first tower. These key objectives are crucial for gaining early control and setting a precedent for the rest of the match.</p>
