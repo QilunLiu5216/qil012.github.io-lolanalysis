@@ -57,6 +57,26 @@ Similarly, the team that destroys the first tower generally has a better chance 
 
 Finally, our exploration of aggregated data, such as the average number of dragons secured in wins versus losses, provided further evidence of the link between early-game objectives and match outcomes.
 
+## Assessment of Missingness
+
+<p>The column with non-trivial missingness I chose to analyze from the dataset is <em>split</em>. Through exploratory analysis, we identified that the missingness in the <em>split</em> column depends on the <em>playoffs</em> column, as indicated by a non-zero correlation and a p-value of 0.0 in the permutation test. This suggests a statistically significant dependency.</p>
+
+<p>Conversely, the missingness in the <em>split</em> column does not depend on the <em>golddiffat15</em> column, as the correlation is zero and the p-value is 1.0, indicating no significant dependency between the missingness in <em>split</em> and the <em>golddiffat15</em> column.</p>
+
+<hr>
+
+## Hypothesis Testing
+
+<p>In our hypothesis testing, we examined the effect of securing early game objectives on the winning rate of the game. The observed statistic represents the mean difference in the win rate between games with an early game score greater than 0 and those with a score of 0, which was approximately 0.496. With a p-value of 0.0, the result is statistically significant, leading us to reject the null hypothesis and accept the alternative hypothesis that securing early game objectives increases the winning rate of the game.</p>
+
+<hr>
+
+## Framing a Prediction Problem
+
+<p>For our prediction problem, we chose a binary classification to predict the outcome of matches, focusing on early game metrics such as 'firstblood', 'firsttower', 'dragons', and 'gamelength'. We justified 'result' as the response variable because it is the ultimate outcome of a game and is directly influenced by early game performance. The F1-score was chosen as the evaluation metric for its balance of precision and recall, which is crucial in a competitive environment where minimizing false positives and negatives is equally important.</p>
+
+<p>Our model aims to predict the outcome of matches using features available at the time of prediction, ensuring no look-ahead bias in our approach. The final model's accuracy and balanced F1-score suggest that the features selected for training are indicative of a team's likelihood of winning, underscoring the strategic value of early game achievements in League of Legends.</p>
+
 
 
 
