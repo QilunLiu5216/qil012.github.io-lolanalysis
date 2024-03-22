@@ -24,6 +24,41 @@ This is a repository about League of Legends 2018 data analysis
 
 <p>With a dataset of 11,559 matches post-data cleaning, our research aims to go beyond academic analysis. We aspire to identify the key early-game objectives that play a critical role in securing victory. This research can guide players and teams in enhancing their strategic play within League of Legends.</p>
 
-<!-- Embed the plotly plots as instructed in the provided steps -->
-<iframe src="assets/file-name.html" width="800" height="600" frameborder="0"></iframe>
+
+## Data Cleaning and Exploratory Data Analysis
+
+### Data Cleaning
+
+Our analysis began by loading the dataset and filtering for complete data to ensure the validity of our analysis. We distinguished between team-level data and player-level data and focused on the team-level metrics that are crucial for our investigation. During our data cleaning process, we converted categorical data into boolean and category types for clearer analyses and handled missing values by dropping columns with more than 50% missing data. The cleaning steps were essential in focusing our analysis on the most impactful factors that may affect a team's win rate.
+
+![Head of Cleaned DataFrame](assets/head_cleaned_dataframe.png)
+
+### Univariate Analysis
+
+Our univariate analysis revealed interesting patterns in the distribution of dragons secured by teams throughout the matches. Here is a bar chart that shows the distribution of dragons secured by teams:
+
+<iframe src="assets/dragons_distribution.html" width="800" height="600" frameborder="0"></iframe>
+
+This bar chart illustrates the percentage of games in which teams secured a varying number of dragons, providing insights into common dragon control strategies.
+
+### Bivariate Analysis
+
+Next, we examined the relationship between securing objectives like dragons and first towers and the final match result. Our analysis demonstrated that teams securing these objectives have a higher probability of winning their matches.
+
+<iframe src="assets/dragons_winrate.html" width="800" height="600" frameborder="0"></iframe>
+
+This stacked bar chart shows that securing more dragons is often associated with an increased win rate, underscoring the strategic importance of dragon control.
+
+<iframe src="assets/firsttower_winrate.html" width="800" height="600" frameborder="0"></iframe>
+
+Similarly, the team that destroys the first tower generally has a better chance of winning, as indicated by the stacked bar chart above.
+
+### Interesting Aggregates
+
+Finally, our exploration of aggregated data, such as the average number of dragons secured in wins versus losses, provided further evidence of the link between early-game objectives and match outcomes.
+
+![Aggregated Data Table](assets/aggregated_data_table.png)
+
+The table above summarizes the mean number of dragons secured by teams, contrasting the outcomes of wins and losses. It highlights the potential advantage provided by securing early-game objectives.
+
 
