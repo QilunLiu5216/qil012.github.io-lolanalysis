@@ -78,6 +78,16 @@ Finally, our exploration of aggregated data, such as the average number of drago
 <p>Our model aims to predict the outcome of matches using features available at the time of prediction, ensuring no look-ahead bias in our approach. The final model's accuracy and balanced F1-score suggest that the features selected for training are indicative of a team's likelihood of winning, underscoring the strategic value of early game achievements in League of Legends.</p>
 
 
+## Baseline Model
 
+<p>For the baseline model, we implemented a pipeline using one-hot encoding for categorical features 'firstblood' and 'firsttower', and no transformation for numerical features 'dragons' and 'gamelength'. The pipeline includes a logistic regression classifier with increased max iterations for better convergence. This baseline model yielded an accuracy score of approximately 0.769 on the test set, suggesting that about 76.9% of the model’s predictions were accurate.</p>
+
+## Final Model
+
+<p>The final model, created with a RandomForestClassifier, underwent hyperparameter tuning through GridSearchCV. Post-tuning, the model demonstrated a slight improvement with an accuracy score of 0.7722273143904674, hinting at the positive impact of feature engineering and hyperparameter optimization. The key hyperparameters were {'classifier__max_depth': 5, 'classifier__n_estimators': 400}, indicating a depth-constrained, but ensemble-rich model.</p>
+
+## Fairness Analysis
+
+<p>In assessing fairness, we posed the question: "Does our model perform equally well for teams starting on the Blue side as it does for teams on the Red side?" We conducted a permutation test to compare the RMSE between the two groups. The observed RMSE difference was -0.0078 with a p-value of 0.263. Since the p-value exceeded the conventional alpha level of 0.05, we did not find substantial evidence to declare the model biased. The analysis suggests the model's performance is fair concerning RMSE between the Blue and Red sides.</p>
 
 
