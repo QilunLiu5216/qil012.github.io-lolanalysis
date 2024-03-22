@@ -59,9 +59,12 @@ Finally, our exploration of aggregated data, such as the average number of drago
 
 ## Assessment of Missingness
 
-<p>The column with non-trivial missingness I chose to analyze from the dataset is <em>split</em>. Through exploratory analysis, we identified that the missingness in the <em>split</em> column depends on the <em>playoffs</em> column, as indicated by a non-zero correlation and a p-value of 0.0 in the permutation test. This suggests a statistically significant dependency.</p>
+<p>We evaluated the dataset for non-trivial missingness and hypothesized whether certain features might be NMAR (Not Missing At Random). Our focus was on the <em>split</em> column. A permutation test revealed that its missingness significantly depends on the <em>playoffs</em> column, suggesting a potential NMAR scenario, as there was a non-zero correlation with a p-value of 0.0. This might imply that the data is missing systematically related to whether the match was part of the playoffs.</p>
 
-<p>Conversely, the missingness in the <em>split</em> column does not depend on the <em>golddiffat15</em> column, as the correlation is zero and the p-value is 1.0, indicating no significant dependency between the missingness in <em>split</em> and the <em>golddiffat15</em> column.</p>
+<p>In contrast, no dependency was found between the missingness of <em>split</em> and <em>golddiffat15</em>, indicated by a zero correlation and a p-value of 1.0. Therefore, missingness in the <em>split</em> column appears to be random with respect to <em>golddiffat15</em>, likely MAR (Missing At Random).</p>
+
+<p>To further validate these findings, it would be beneficial to gather additional information on the data collection process, specifically during the playoffs period, to understand why missingness occurs in the <em>split</em> column.</p>
+
 
 <hr>
 
@@ -88,6 +91,6 @@ Finally, our exploration of aggregated data, such as the average number of drago
 
 ## Fairness Analysis
 
-<p>In assessing fairness, we posed the question: "Does our model perform equally well for teams starting on the Blue side as it does for teams on the Red side?" We conducted a permutation test to compare the RMSE between the two groups. The observed RMSE difference was -0.0078 with a p-value of 0.263. Since the p-value exceeded the conventional alpha level of 0.05, we did not find substantial evidence to declare the model biased. The analysis suggests the model's performance is fair concerning RMSE between the Blue and Red sides.</p>
+<p>In assessing fairness, I posed the question: "Does our model perform equally well for teams starting on the Blue side as it does for teams on the Red side?" I conducted a permutation test to compare the RMSE between the two groups. The observed RMSE difference was -0.0078 with a p-value of 0.263. Since the p-value exceeded the conventional alpha level of 0.05, we did not find substantial evidence to declare the model biased. The analysis suggests the model's performance is fair concerning RMSE between the Blue and Red sides.</p>
 
 
